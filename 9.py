@@ -9,3 +9,16 @@ class Solution:
                 return(A[i])
             else:
                 char[A[i]] = True
+                
+class Solution2:
+    def repeatedNTimes(self, A: List[int]):
+        c = -1
+        for i in range(len(A)):
+            if c == A[i]:
+                return(c)
+            c = A[i]
+        if A[0] == A[2]:
+            return(A[0])
+        elif A[0] == A[3]:
+            return(A[0])
+        return(A[1])                
