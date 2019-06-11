@@ -11,7 +11,9 @@ class Solution:
         if i == len(A):
             for j in range(len(A)):
                 B.append(A[len(A)-j-1]*A[len(A)-j-1])
-            return(B)    
+            return(B)
+        if i > 0 and abs(A[i-1]) < abs(A[i]):
+            i -= 1 
         B.append(A[i]*A[i]) 
         for j in range(len(A)-1):
             if i - sl < 0:
@@ -32,4 +34,4 @@ class Solution:
                     sl += sr
                     sr = 1  
             B.append(A[i]*A[i])     
-        return(B)  
+        return(B) 
