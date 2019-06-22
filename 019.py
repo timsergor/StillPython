@@ -1,3 +1,5 @@
+#Given a string S and a character C, return an array of integers representing the shortest distance from the character C in the string.
+
 class Solution:
     def shortestToChar(self, S: str, C: str):
         M = [10000]*len(S)
