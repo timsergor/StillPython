@@ -20,7 +20,7 @@ class Solution:
         trace = 0
         arrow = [root]
         current = root
-        while arrow and len(arrow) < 7:
+        while arrow:
             if trace == 0:
                 if current.right:
                     arrow.append(current.right)
