@@ -1,0 +1,42 @@
+#814. Binary Tree Pruning. Medium
+# We are given the head node root of a binary tree, where additionally every node's value is either a 0 or a 1.
+# Return the same tree where every subtree (of the given tree) not containing a 1 has been removed.
+# (Recall that the subtree of a node X is X, plus every node that is a descendant of X.)
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def pruneTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
+        def check(node):
+            if not(node.left or node.right):
+                if node.val:
+                    return(True)
+                else:
+                    return(False)
+            elif not(node.right):
+                return(node.val or check(node.left))
+            elif not(node.left):
+                return(node.val or check(node.right))
+            else:
+                return(node.val or check(node.left) or check(node.right))
+        
+        def snake(node):
+            if not check(node):
+                node = None
+            elif node.left or node.right:
+                if node.left:
+                    snake(node.left)
+                if node.right:
+                    snake(node.right) 
+            return(node)
+            
+        return(snake(root))
