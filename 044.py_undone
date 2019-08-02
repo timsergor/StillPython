@@ -1,0 +1,50 @@
+#763. Partition Labels. Medium. 71.5%
+
+#A string S of lowercase letters is given. We want to partition this string into as many parts as possible so that each letter appears in at most one part, and return a list of integers representing the size of these parts.
+
+class Solution(object):
+    def partitionLabels(self, S):
+        """
+        :type S: str
+        :rtype: List[int]
+        """
+        def first(M):
+            return(M[0])
+        
+        def Merge(M,N):
+            P = []
+            m = 0
+            n = 0
+            for i in range(len(M) + len(N)):
+                if m < len(M) and n < len(N):
+                    if M[m] < N[n]:
+                        P.append(M[m])
+                        m += 1
+                    else:
+                        P.append(N[n])
+                        n += 1
+                elif m == len(M):
+                    P.append(N[n])
+                    n += 1
+                else:
+                    P.append(M[m])
+                    m += 1
+            return(P)
+        
+        A = []
+        for i in range(27):
+            A.append([])
+        for i in range(len(S)):
+            A[ord(S[i]) - ord("a")].append(i)
+        while [] in A:
+            A.remove([])
+        A.sort(key = first)
+        partition = []
+        t = 0
+        while t < len(A):
+            if A[t][len(A[t])-1] - A[t][0] == len(A[t]):
+                partition.append(len(A[t]))
+            else:            
+                A[t] = Merge(A[t],A[t+1])
+                A.pop(t+1)
+        return(partition)
