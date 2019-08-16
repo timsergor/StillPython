@@ -32,3 +32,5 @@ class Solution:
                 return(False)
             
         return(isFlipped(root1, root2))
+
+# < 30 min
