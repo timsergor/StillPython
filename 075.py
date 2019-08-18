@@ -1,4 +1,4 @@
-#104. Maximum Depth of Binary Tree. Easy.
+#104. Maximum Depth of Binary Tree. Easy. 61.6%
 #Given a binary tree, find its maximum depth.
 #The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
@@ -18,3 +18,5 @@ class Solution:
                 return(max(hieght(Node.left), hieght(Node.right)) + 1)
         
         return(hieght(root))
+
+  # 1min
