@@ -16,3 +16,5 @@ class Solution:
             else:
                 Flag = False
         return(current)
+
+# 10min.
