@@ -12,12 +12,10 @@ class Solution:
             return(0)
         
         def neir(p, A):
-            surr = []
             for i in range(-1,2):
                 for j in range(-1,2):
                     if abs(i + j) == 1 and p[0] + i >= 0 and p[0] + i < len(A) and p[1] + j >= 0 and p[1] + j < len(A[0]):
-                        surr.append([p[0] + i, p[1] + j])
-            return(surr)
+                        yeild([p[0] + i, p[1] + j])
             
         outro = Queue()
         for i in range(len(A[0])):
