@@ -1,4 +1,4 @@
-#513. Find Bottom Left Tree Value. Medium.
+#513. Find Bottom Left Tree Value. Medium. 59.2%.
 #Given a binary tree, find the leftmost value in the last row of the tree.
 
 class Solution:
