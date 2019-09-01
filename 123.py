@@ -28,3 +28,5 @@ class Solution:
                 return 0
             else:
                 return y
+
+# 10min.
