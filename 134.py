@@ -1,4 +1,4 @@
-# 781. Rabbits in Forest. Medium.
+# 781. Rabbits in Forest. Medium. 52.4%.
 
 # In a forest, each rabbit has some color. Some subset of rabbits (possibly all of them) tell you how many other rabbits have the same color as them. Those answers are placed in an array.
 # Return the minimum number of rabbits that could be in the forest.
@@ -22,4 +22,4 @@ class Solution(object):
             answer += char[i]
         return answer
         
-# 5min
+# 5-7 min
