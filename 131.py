@@ -1,3 +1,8 @@
+# 67. Add Binary. Easy.
+
+# Given two binary strings, return their sum (also a binary string).
+# The input strings are both non-empty and contains only characters 1 or 0.
+
 class Solution(object):        
     def addBinary(self, a, b):
         """
@@ -31,3 +36,5 @@ class Solution(object):
             pre.append(str(mem))
         pre.reverse()
         return("".join(pre))
+
+# < 25min
