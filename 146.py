@@ -1,4 +1,4 @@
-# 234. Palindrome Linked List. Easy.
+# 234. Palindrome Linked List. Easy. 36.9%.
 
 # Given a singly linked list, determine if it is a palindrome.
 
