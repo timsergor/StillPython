@@ -1,4 +1,4 @@
-# 347. Top K Frequent Elements. Medium.
+# 347. Top K Frequent Elements. Medium. 56.5%.
 
 # Given a non-empty array of integers, return the k most frequent elements.
 
@@ -27,4 +27,4 @@ class Solution(object):
             answer.append(vals[i][0])
         return answer
         
-# 10-15 min
+# 7-8 min
