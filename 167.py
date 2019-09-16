@@ -17,4 +17,4 @@ class Solution(object):
             answer += abs(nums[i] - mid)
         return answer
         
-# 14min.
+# 12min.
