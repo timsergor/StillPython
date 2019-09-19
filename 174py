@@ -1,0 +1,109 @@
+# 662. Maximum Width of Binary Tree. Medium. 39.5%.
+
+# Given a binary tree, write a function to get the maximum width of the given tree. The width of a tree is the maximum width among all levels. The binary tree has the same structure as a full binary tree, but some nodes are null.
+
+# The width of one level is defined as the length between the end-nodes (the leftmost and right most non-null nodes in the level, where the null nodes between the end-nodes are also counted into the length calculation.
+
+SOLUTION ONE (MEMORY LIMIT EXEEDED):
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def widthOfBinaryTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        def theDepth(node):
+            if not node:
+                return -1
+            else:
+                return max(theDepth(node.left), theDepth(node.right)) + 1
+        
+        D = theDepth(root)
+        map = []
+        
+        def build(node, depth):
+            if node:
+                if depth >= len(map):
+                    map.append([])
+                map[depth].append(node.val)
+                build(node.left, depth + 1)
+                build(node.right, depth + 1)
+            else:
+                for j in range(D - depth + 1):
+                    while j + depth >= len(map):
+                        map.append([])
+                    map[j + depth].extend(["None"] * (2**j))
+        
+        build(root, 0)
+        
+        def width(row):
+            l = r = -1
+            for i in range(len(row)):
+                if row[i] != "None":
+                    r = i
+                    if l == -1:
+                        l = i
+            return r - l + 1
+        
+        answer = 0
+        for i in range(len(map)):
+            x = width(map[i])
+            if x > answer:
+                answer = x
+        return answer
+        
+# 35min
+
+SOLUTION TWO (CORRECT):
+
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def widthOfBinaryTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        def theDepth(node):
+            if not node:
+                return -1
+            else:
+                return max(theDepth(node.left), theDepth(node.right)) + 1
+        
+        D = theDepth(root)
+        
+        map = []
+        depth = 0
+        def edges(node, depth, bag):
+            if node:
+                if depth >= len(map):
+                    map.append([])
+                map[depth].append(bag)
+                edges(node.left, depth + 1, bag * 2)
+                edges(node.right, depth + 1, bag * 2 + 1)
+        
+        edges(root, 0, 1)
+        
+        def width(row):
+            return (row[-1] - row[0] + 1)
+        
+        answer = 0
+        for i in range(len(map)):
+            x = width(map[i])
+            if x > answer:
+                answer = x
+        return answer
+        
+# 7-10 min.
