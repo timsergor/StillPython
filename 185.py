@@ -1,4 +1,4 @@
-# 73. Set Matrix Zeroes
+# 73. Set Matrix Zeroes. Medium. 40.9%.
 
 # Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in-place.
 
