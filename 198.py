@@ -12,3 +12,5 @@ class Solution(object):
         for i in range(len(s)):
             answer += (ord(s[-1 -i]) - ord("A") + 1)*(26**i)
         return answer
+
+# 1-3min.
