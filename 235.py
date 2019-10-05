@@ -46,4 +46,4 @@ class Solution(object):
             r -= 1
         return map[0][l:r + 1]
         
-# 60min.
+# 40min.
