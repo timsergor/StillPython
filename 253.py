@@ -1,4 +1,4 @@
-# 904. Fruit Into Baskets
+# 904. Fruit Into Baskets. 41.8%.
 
 # In a row of trees, the i-th tree produces fruit with type tree[i].
 
