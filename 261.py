@@ -1,4 +1,4 @@
-# 955. Delete Columns to Make Sorted II. Medium. 32.6%.
+# 955. Delete Columns to Make Sorted II. Medium. 32.4%.
 
 # We are given an array A of N lowercase letter strings, all of the same length.
 
