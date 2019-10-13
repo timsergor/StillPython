@@ -37,4 +37,4 @@
             answer += state[0]
         return answer % (10**9 + 7)
         
-# ~60min.
+# 25-60min.
