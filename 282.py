@@ -17,20 +17,6 @@
 
 class Solution:
     def sumNumbers(self, root: TreeNode) -> int:
-        def height(node):
-            if not node:
-                return 0
-            else:
-                return max(height(node.left), height(node.right)) + 1
-            
-        def leafs(node):
-            if not node:
-                return 0
-            if not (node.left or node.right):
-                return 1
-            else:
-                return leafs(node.left) + leafs(node.right)
-        
         def upgrate(node):
             if not node:
                 pass
