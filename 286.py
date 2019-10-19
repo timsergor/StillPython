@@ -37,3 +37,5 @@ class Solution:
             return [max(slots1[-1][0], slots2[-1][0]), max(slots1[-1][0], slots2[-1][0]) + duration]
         else:
             return []
+        
+~ 27min.
