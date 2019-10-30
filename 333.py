@@ -1,4 +1,4 @@
-# 98. Validate Binary Search Tree
+# 98. Validate Binary Search Tree. Medium. 26.5%.
 
 # Given a binary tree, determine if it is a valid binary search tree (BST).
 
