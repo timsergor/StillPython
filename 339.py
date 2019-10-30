@@ -1,4 +1,4 @@
-# 981. Time Based Key-Value Store
+# 981. Time Based Key-Value Store. Medium. 51.9%.
 
 # Create a timebased key-value store class TimeMap, that supports two operations.
 
