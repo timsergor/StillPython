@@ -1,4 +1,4 @@
-# 5098. Tree Diameter. Medium.
+# 5098. Tree Diameter. Medium. Contest.
 
 # Given an undirected tree, return its diameter: the number of edges in a longest path in that tree.
 
