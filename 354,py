@@ -1,0 +1,29 @@
+# 621. Task Scheduler. Medium. 46.8%.
+
+# Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent different tasks. Tasks could be done without original order. Each task could be done in one interval. For each interval, CPU could finish one task or just be idle.
+
+# However, there is a non-negative cooling interval n that means between two same tasks, there must be at least n intervals that CPU are doing different tasks or just be idle.
+
+# You need to return the least number of intervals the CPU will take to finish all the given tasks.
+
+class Solution:
+    def leastInterval(self, tasks: List[str], n: int) -> int:
+        char = {}
+        for z in tasks:
+            if z not in char:
+                char[z] = 1
+            else:
+                char[z] += 1
+        tasks = list(char.values())
+        tasks.sort(reverse = True)
+        t = 0
+        answer = sum(tasks)
+        while tasks[0]:
+            while t < len(tasks) and tasks[t] and t < n + 1:
+                tasks[t] -= 1
+                t += 1
+            if (t == len(tasks) or tasks[t] == 0) and tasks[0]:
+                answer += (n + 1 - t)
+            t = 0
+            tasks.sort(reverse = True)
+        return answer
