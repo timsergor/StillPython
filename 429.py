@@ -1,4 +1,4 @@
-# 884. Uncommon Words from Two Sentences. Easy.
+# 884. Uncommon Words from Two Sentences. Easy. 61.4%.
 
 # We are given two sentences A and B.  (A sentence is a string of space separated words.  Each word consists only of lowercase letters.)
 
